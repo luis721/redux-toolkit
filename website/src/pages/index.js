@@ -2,6 +2,7 @@ import React from 'react'
 import classnames from 'classnames'
 import Layout from '@theme/Layout'
 import Link from '@docusaurus/Link'
+import Translate from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import useBaseUrl from '@docusaurus/useBaseUrl'
 import styles from './styles.module.css'
@@ -149,7 +150,9 @@ function Home() {
               )}
               to={useBaseUrl('introduction/getting-started')}
             >
-              Get Started
+              <Translate >
+                Get Started
+              </Translate>
             </Link>
           </div>
         </div>

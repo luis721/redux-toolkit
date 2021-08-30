@@ -1,20 +1,31 @@
 // site configuration options.
 const { resolve } = require('path')
+const i18n = require('./i18n')
+
 const {
   linkDocblocks,
   transpileCodeblocks,
 } = require('remark-typescript-tools')
 
 module.exports = {
+  i18n,
   presets: [
     [
       '@docusaurus/preset-classic',
       {
         docs: {
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
           docLayoutComponent: '../src/theme/DocPageWithBraveWarning',
           path: '../docs',
           sidebarPath: require.resolve('./sidebars.json'),
           routeBasePath: '/',
+          editUrl: ({ locale, versionDocsDirPath, docPath }) => {
+            if (locale !== 'en') {
+              return `https://crowdin.com/project/redux-toolkit/${locale}`;
+            }
+            return `https://github.com//reduxjs/redux-toolkit/edit/master/website/${versionDocsDirPath}/${docPath}`;
+          },
           include: [
             '{api,assets,introduction,rtk-query,tutorials,usage}/**/*.{md,mdx}',
           ], // no other way to exclude node_modules
@@ -75,6 +86,10 @@ module.exports = {
         src: 'img/redux.svg',
       },
       items: [
+        {
+          type: 'localeDropdown',
+          position: 'right',
+        },
         {
           to: 'introduction/getting-started',
           label: 'Getting Started',

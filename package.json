@@ -22,6 +22,7 @@
     "examples/query/react/*"
   ],
   "devDependencies": {
+    "@crowdin/cli": "3",
     "eslint": "^7.25.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-react-app": "^5.0.1",
@@ -47,6 +48,8 @@
     "build:docs": "yarn workspace website run build",
     "build:packages": "yarn workspaces foreach --include '@reduxjs/*' --include '@rtk-query/*' --topological-dev run build",
     "test:packages": "yarn workspaces foreach --include '@reduxjs/*' --include '@rtk-query/*' run test",
-    "dev:docs": "yarn workspace website run start"
+    "dev:docs": "yarn workspace website run start",
+    "crowdin:upload": "echo 'Uploading sources to Crowdin' && crowdin upload sources --config ./crowdin.yaml",
+    "crowdin:download": "echo 'Downloading translations from Crowdin' && crowdin download --config ./crowdin.yaml"
   }
 }

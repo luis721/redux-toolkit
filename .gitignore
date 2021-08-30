@@ -32,3 +32,6 @@ typesversions
 .yalc
 yalc.lock
 yalc.sig
+
+/website/i18n/*
+.env
