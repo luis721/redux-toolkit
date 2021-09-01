@@ -50,6 +50,7 @@
     "test:packages": "yarn workspaces foreach --include '@reduxjs/*' --include '@rtk-query/*' run test",
     "dev:docs": "yarn workspace website run start",
     "crowdin:upload": "echo 'Uploading sources to Crowdin' && crowdin upload sources --config ./crowdin.yaml",
-    "crowdin:download": "echo 'Downloading translations from Crowdin' && crowdin download --config ./crowdin.yaml"
+    "crowdin:download": "echo 'Downloading translations from Crowdin' && crowdin download --config ./crowdin.yaml",
+    "crowdin:sync": "yarn crowdin:upload && yarn crowdin:download"
   }
 }

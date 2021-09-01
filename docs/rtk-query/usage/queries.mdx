@@ -163,7 +163,11 @@ Here is an example of a `PostDetail` component:
 
 ```tsx title="Example"
 export const PostDetail = ({ id }: { id: string }) => {
-  const { data: post, isFetching, isLoading } = useGetPostQuery(id, {
+  const {
+    data: post,
+    isFetching,
+    isLoading,
+  } = useGetPostQuery(id, {
     pollingInterval: 3000,
     refetchOnMountOrArgChange: true,
     skip: false,
@@ -290,6 +294,8 @@ This example demonstrates request deduplication and caching behavior:
 :::note Try it out
 Click the 'Add bulbasaur' button. You'll observe the same behavior described above until you click the 'Refetch' button on one of the components.
 :::
+
+<!---->
 
 <iframe
   src="https://codesandbox.io/embed/github/reduxjs/redux-toolkit/tree/master/examples/query/react/deduping-queries?fontsize=12&runonclick=1&hidenavigation=1&theme=dark"
