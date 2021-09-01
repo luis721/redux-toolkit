@@ -3,7 +3,8 @@
   "scripts": {
     "start": "docusaurus start",
     "build": "docusaurus build",
-    "netlify-build": "docusaurus write-translations && yarn crowdin:download && yarn install && yarn build",
+    "crowdin:sync": "yarn crowdin:upload && yarn crowdin:download",
+    "netlify-build": "docusaurus write-translations && crowdin:sync && yarn install && yarn build",
     "swizzle": "docusaurus swizzle",
     "publish-gh-pages": "docusaurus deploy",
     "deploy": "docusaurus deploy",
