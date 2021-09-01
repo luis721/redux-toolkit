@@ -22,12 +22,11 @@ files:
       languages_mapping: *languages_mapping,
       ignore:
         [
-          "/node_modules/**/*",
-          "package.json",
-          "/virtual/**/*",
-          "tsconfig.json",
-          "/assets/**/*",
-          "*.json",
+          "/docs/virtual",
+          "/docs/tsconfig.json",
+          "/docs/assets",
+          "/docs/package.json",
+          "/docs/node_modules",
         ],
     },
   ]
